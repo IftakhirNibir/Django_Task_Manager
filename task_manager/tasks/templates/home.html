@@ -4,6 +4,99 @@
 
 {% block content %}
 
-<h1>This is Task Homepage</h1>
+<div style="display: flex;">
+    <hr style="flex-grow: 1;">
+    <h2 style="text-align: center; margin: 0 10px; margin-bottom: 8px;">Task Lists</h2>
+    <hr style="flex-grow: 1;">
+</div>
+
+<div class="container">
+    <form method="get" class="form-inline">
+      <div class="row">
+        <div class="col-md-3">
+          <div class="form-group mr-2">
+            <label for="creation_date">Search</label>
+            <input type="text" class="form-control" name="search" placeholder="Search by Title" value="{{ search_query }}">
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="form-group mr-2">
+            <label for="creation_date">Creation Date</label>
+            <input type="date" class="form-control" id="creation_date" name="creation_date" value="{{ creation_date_filter }}">
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="form-group mr-2">
+            <label for="due_date">Due Date</label>
+            <input type="date" class="form-control" id="due_date" name="due_date" value="{{ due_date_filter }}">
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="form-group mr-2">
+            <label for="priority">Priority</label>
+            <select class="form-control" id="priority" name="priority">
+              <option value="" {% if not priority_filter %}selected{% endif %}>Priority</option>
+              <option value="Low" {% if priority_filter == 'Low' %}selected{% endif %}>Low</option>
+              <option value="Medium" {% if priority_filter == 'Medium' %}selected{% endif %}>Medium</option>
+              <option value="High" {% if priority_filter == 'High' %}selected{% endif %}>High</option>
+            </select>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="form-group mr-2">
+            <label for="completed">Is Complete</label>
+            <select class="form-control" id="completed" name="completed">
+              <option value="" {% if not completed_filter %}selected{% endif %}>Is Complete</option>
+              <option value="True" {% if completed_filter == 'True' %}selected{% endif %}>Yes</option>
+              <option value="False" {% if completed_filter == 'False' %}selected{% endif %}>No</option>
+            </select>
+          </div>
+        </div>
+        <div class="col-md-3" style="margin-top: 24px;">
+          <button style="border: 1px solid #C0C0C0;" type="submit" class="btn btn-light"><sub><ion-icon name="reload-circle-outline" style="font-size: 18px;"></ion-icon></sub> Apply Filters</button>
+        </div>
+      </div>
+    </form>
+  </div>
+
+<div class="table-responsive" style="margin-top: 10px;">
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>Photos</th>
+                <th>Title</th>
+                <th>Description</th>
+                <th>Creation Date</th>
+                <th>Due Date</th>
+                <th>Priority</th>
+                <th>Is Complete</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for task in tasks %}
+            <tr>
+                    <td>
+                        <a href="{% url 'task_detail' task.id %}">
+                        <ul class="list-unstyled">
+                            {% for taskphoto in task.taskphoto_set.all %}
+                            <li>
+                                <img src="{{ taskphoto.photo.url }}" alt="Task Photo" class="img-thumbnail" width="100">
+                            </li>
+                            {% endfor %}
+                        </ul>
+                        </a>
+                    </td>
+                    <td>{{ task.title }}</td>
+                    <td>{{ task.description }}</td>
+                    <td>{{ task.created_at }}</td>
+                    <td>{{ task.due_date }}</td>
+                    <td>{{ task.priority }}</td>
+                    <td>{{ task.completed }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
 
 {% endblock %}
+

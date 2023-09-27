@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block title %} {{title}} {% endblock %}
+{% block content %}
+
+<div style="margin-bottom: 235px;" class="row justify-content-center align-items-center">
+<div class="col-md-6 my-4">
+<div class="delete" style="border: #C0C0C0 solid 1px; padding: 15px;">
+<h1>Confirm Deletion</h1>
+    <p>Are you sure you want to delete the task "{{ task.title }}"?</p>
+    <form method="post">
+        {% csrf_token %}
+        <button style="border: 1px solid #C0C0C0;" class="btn btn-light" type="submit"><sub><ion-icon name="checkmark-circle-outline" style="font-size: 20px;"></ion-icon></sub> Delete</button>
+        <a style="border: 1px solid #C0C0C0;" href="{% url 'task_detail' task.id %}" class="btn btn-light"><sub><ion-icon name="close-circle-outline" style="font-size: 20px;"></ion-icon></sub> Cancel</a>
+    </form>
+</div>
+</div>
+</div>
+
+{% endblock %}

@@ -1,6 +1,26 @@
 from django import forms
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth.models import User
+from .models import *
+
+class TaskForm(forms.ModelForm):
+    class Meta:
+        model = Task
+        fields = ('title', 'description', 'due_date', 'priority', 'completed')
+
+class TaskUpdateForm(forms.ModelForm):
+    class Meta:
+        model = Task
+        fields = ('title', 'description', 'due_date', 'priority', 'completed')
+
+        widgets = {
+            'title': forms.TextInput(attrs={'class': 'form-control'}),
+            'description': forms.Textarea(attrs={'class': 'form-control'}),
+            'due_date': forms.SelectDateWidget(attrs={'class': 'form-control'}),
+            'priority': forms.Select(attrs={'class': 'form-control'}),
+            'completed': forms.CheckboxInput(attrs={'class': 'form-check-input'}),
+        }
+
 
 class LoginForm(AuthenticationForm):
     username = forms.CharField(widget=forms.TextInput(attrs={
