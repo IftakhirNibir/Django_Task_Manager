@@ -1,10 +1,5 @@
 # Project Name: Task Manager
 The application should allow multiple users to create, view, update, and delete tasks.
-## Requirements
-
-- Python 3.x
-- Django 3.x
-- Other dependencies...
 
 ## The way to set up and run the project.
 1. First, you need to install Python and pip on your local machine
@@ -51,20 +46,8 @@ py manage.py runserver
 ```bash
 http://127.0.0.1:8000/
 ```
-
-## Environment Variables
-
-- `SECRET_KEY`: Your Django secret key.
-- `DEBUG`: Set to `True` for development, `False` for production.
-- ...
-
-## Database Setup
-
-If using PostgreSQL:
-1. Install PostgreSQL.
-2. Create a database and user.
-3. Update database settings in `settings.py`.
-
-## Running the Project
-
-To run the development server:
+Now you need to sign up and log in to get our service
+13. You can also visit our admin panel. For this, you need to create superuser in terminal
+```bash
+py manage.py createsuperuser
+```
