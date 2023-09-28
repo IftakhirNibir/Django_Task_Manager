@@ -90,3 +90,6 @@ The base URL for all API endpoints is: `http://127.0.0.1:8000/api/`
 - **Description**: Fetch all information of a task.
 - **Authentication**: Not required.
 - **Body**: JSON data containing a piece of task information.
+
+## The UI of the website is given below
+<img src="screenshots/homepage.png">
