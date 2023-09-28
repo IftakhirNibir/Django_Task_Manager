@@ -12,7 +12,7 @@
 
 <div class="row justify-content-center align-items-center">
   <div class="col-md-6 my-4">
-<ul class="list-group">
+  <ul class="list-group">
     <li class="list-group-item"><strong>Title: </strong>{{ task.title }}</li>
     <li class="list-group-item"><strong>Description: </strong>{{ task.description }}</li>
     <li class="list-group-item"><strong>Creation Date: </strong>{{ task.created_at }}</li>
@@ -24,6 +24,7 @@
   </ul>
   </div>
 </div>
+
 <div class="mt-4">
     {% if task.user == request.user %}
     <a style="border: 1px solid #C0C0C0;" href="{% url 'task_update' task.id %}" class="btn btn-light"><sub><ion-icon name="create-outline" style="font-size: 20px;"></ion-icon></sub> Edit</a>
@@ -44,7 +45,7 @@
                 <div class="image-container">
                     <img src="{{ taskphoto.photo.url }}" alt="Task Photo" class="img-thumbnail">
                     {% if request.user == task.user %}
-                        <a href="{% url 'delete_photo' task_id=task.id photo_id=taskphoto.id %}" class="btn btn-light">Delete</a>
+                        <a style="border: 1px solid #C0C0C0; margin: 5px;" href="{% url 'delete_photo' task_id=task.id photo_id=taskphoto.id %}" class="btn btn-light">Delete</a>
                     {% endif %}
                 </div>
             </div>
