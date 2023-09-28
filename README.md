@@ -1,7 +1,7 @@
 # Project Name: Task Manager
-The application should allow multiple users to create, view, update, and delete tasks.
+This application allows multiple users to create, view, update, and delete their tasks
 
-## The way to set up and run the project.
+## Ways to set up and run projects.
 1. First, you need to install Python and pip on your local machine
 2. Create a folder and open the terminal in that folder
 3. Create a virtual environment using the terminal. For example, the environment name is "env"
