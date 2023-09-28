@@ -1,17 +1,18 @@
-# Project Name
-
-A brief description of the project.
-
+# Project Name: Task Manager
+The application should allow multiple users to create, view, update, and delete tasks.
 ## Requirements
 
 - Python 3.x
 - Django 3.x
 - Other dependencies...
 
-## Installation Instructions
-
-1. Clone the repository.
-2. Create a virtual environment: `python -m venv venv`.
+## The way to set up and run the project.
+1. First you need to install python and pip in your local machine.
+2. Then you need to clone the repository.
+'''bash
+git https://github.com/IftakhirNibir/Django_Task_Manager.git 
+'''
+3. Create a virtual environment: `python -m venv venv`.
 3. Activate the virtual environment: `source venv/bin/activate` (Linux/macOS) or `venv\Scripts\activate` (Windows).
 4. Install dependencies: `pip install -r requirements.txt`.
 5. Configure environment variables (see below).
