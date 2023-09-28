@@ -93,3 +93,14 @@ The base URL for all API endpoints is: `http://127.0.0.1:8000/api/`
 
 ## The UI of the website is given below
 <img src="screenshots/homepage.png">
+<img src="screenshots/signup.png">
+<img src="screenshots/login.png">
+<img src="screenshots/yourlist.png">
+<img src="screenshots/detailspage.png">
+<img src="screenshots/taskupdatepage.png">
+<img src="screenshots/deleteconformationpage.png">
+<img src="screenshots/rootapi.png">
+<img src="screenshots/tasklistapi.png">
+<img src="screenshots/taskinstanceapi.png">
+<img src="screenshots/taskphotoapi.png">
+<img src="screenshots/admin.png">
