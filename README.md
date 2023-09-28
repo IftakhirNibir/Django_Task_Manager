@@ -51,3 +51,42 @@ Now you need to sign up and log in to get our service
 ```bash
 py manage.py createsuperuser
 ```
+## API Endpoints
+
+This section provides an overview of the available API endpoints, their URLs, and their intended use. 
+
+## Base URL
+
+The base URL for all API endpoints is: `http://127.0.0.1:8000/api/`
+
+ 1. Endpoint 1: List of Tasks
+
+- **URL**: `http://127.0.0.1:8000/api/tasks/`
+- **Method**: GET
+- **Description**: Fetch a list of all tasks.
+- **Authentication**: Not required.
+- **Body**: JSON data containing a list of tasks.
+
+2. Endpoint 2: Create a New Task
+
+- **URL**: `http://127.0.0.1:8000/api/tasks/`
+- **Method**: POST
+- **Description**: Fetch a list of all tasks.
+- **Authentication**: Not required.
+- **Body**: JSON data containing a list of tasks.
+
+3. Endpoint 3: Update a Task
+
+- **URL**: `http://127.0.0.1:8000/api/tasks/<id>`
+- **Method**: PUT
+- **Description**: Fetch all information of a task.
+- **Authentication**: Not required.
+- **Body**: JSON data containing a piece of task information.
+
+4. Endpoint 4: Delete a Task
+
+- **URL**: `http://127.0.0.1:8000/api/tasks/<id>`
+- **Method**: DELETE
+- **Description**: Fetch all information of a task.
+- **Authentication**: Not required.
+- **Body**: JSON data containing a piece of task information.
