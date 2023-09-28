@@ -29,7 +29,7 @@ pip install -r requirement.txt
 cd task_manager
 ```
 9. Create ".env" file inside the current folder
-10. Now copy the below section and paste it into your ".env" file and make the necessary changes
+10. Now copy the below section and paste it into your ".env" file to set up the environment variables and make the necessary changes
 ```bash
 DB_ENGINE=django.db.backends.postgresql
 DB_NAME=<Your-DB-Name>
